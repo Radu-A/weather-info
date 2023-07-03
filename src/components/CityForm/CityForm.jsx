@@ -1,9 +1,16 @@
 import React from "react";
 
-const CityForm = () => {
+const CityForm = ({setCity}) => {
+
+  const handleSubmit = (event)=> {
+    event.preventDefault();
+
+    setCity(event.target.city.value);
+  }
+
   return (
     <section className="form-section">
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <input type="text" name="city" id="" placeholder="City"/>
         <button type="submit">Search</button>
       </form>

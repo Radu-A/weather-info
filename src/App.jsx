@@ -11,16 +11,16 @@ function App() {
 
   useEffect(() => {
     const getWeather = async () =>{
-      const resp = await fetch('https://api.openweathermap.org/data/2.5/forecast?q=Madrid&appid=d96ac8728492b4bae1caf1e47f7501d8');
+      const resp = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city ? city : 'Madrid'}&appid=d96ac8728492b4bae1caf1e47f7501d8`);
       const data = await resp.json();
       setWeather(data)
     }
     getWeather();
-  }, []);
+  }, [city]);
 
   return (
     <>
-      <CityForm />
+      <CityForm setCity={setCity}/>
       <WeatherList weather={weather} />
     </>
   )
