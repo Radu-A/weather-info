@@ -4,6 +4,8 @@ import './App.css'
 import CityForm from './components/CityForm'
 import WeatherList from './components/WeatherList/WeatherList'
 
+import forecastIcon from './assets/img/weather-forecast.png'
+
 function App() {
 
   const [weather, setWeather] = useState();
@@ -25,8 +27,13 @@ function App() {
 
   return (
     <>
+      <section className='title-section'>
+        <img src={forecastIcon} alt="" />
+        <h1>Forecast 5d / 3h</h1>
+      </section>
       <CityForm setCity={setCity}/>
       <WeatherList weather={weather} />
+      <a href="https://www.flaticon.com/free-icons/weather-forecast" title="weather forecast icons">Weather forecast icons created by Rosa Suave - Flaticon</a>
     </>
   )
 }

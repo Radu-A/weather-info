@@ -1,0 +1,19 @@
+.form-section {
+    margin: 2rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+input {
+    height: 2rem;
+}
+
+button {
+    padding: 0 1rem;
+    height: 2.5rem;
+}
