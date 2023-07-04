@@ -10,10 +10,15 @@ function App() {
   const [city, setCity] = useState();
 
   useEffect(() => {
+    
     const getWeather = async () =>{
-      const resp = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city ? city : 'Madrid'}&appid=d96ac8728492b4bae1caf1e47f7501d8`);
-      const data = await resp.json();
-      setWeather(data)
+      try {
+        const resp = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city ? city : 'Madrid'}&appid=${import.meta.env.VITE_API_KEY}`);
+        const data = await resp.json();
+        setWeather(data)
+      } catch (error) {
+        console.log(error);
+      }
     }
     getWeather();
   }, [city]);
