@@ -12,7 +12,7 @@
   </p>
 </div>
 
-[![Product Name Screen Shot][product-screenshot]](./src/assets/screenshots/screenshot-weather-info.jpg)
+![](./src/assets/screenshots/screenshot-weather-info.jpg)
 
 ### Built With
 
@@ -28,7 +28,8 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+
+- npm
   ```sh
   npm install npm@latest -g
   ```
@@ -43,11 +44,11 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    npm install
    ```
-4. Run the app
+3. Run the app
    ```js
    npm start
    ```
-   
+
 ## Usage
 
 Introduce the name of the city and press "search"
