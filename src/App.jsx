@@ -10,14 +10,40 @@ function App() {
 
   const [weather, setWeather] = useState();
   const [city, setCity] = useState();
+  let lat = 0;
+  let lon = 0;
+  function success(pos) {
+    const crd = pos.coords;
+    
+    lat = crd.latitude;
+    lon = crd.longitude;
+  
+    console.log("Your current position is:");
+    console.log(`Latitude : ${crd.latitude}`);
+    console.log(`Longitude: ${crd.longitude}`);
+    console.log(`More or less ${crd.accuracy} meters.`);
+  }
+  
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+  
+  navigator.geolocation.getCurrentPosition(success, error);
 
   useEffect(() => {
     
     const getWeather = async () =>{
       try {
-        const resp = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city ? city : 'Madrid'}&appid=${import.meta.env.VITE_API_KEY}`);
-        const data = await resp.json();
-        setWeather(data)
+        if (city) {
+          const resp = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city ? city : 'Madrid'}&appid=${import.meta.env.VITE_API_KEY}`);
+          const data = await resp.json();
+          setWeather(data)
+        } else {
+          const resp = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${import.meta.env.VITE_API_KEY}`);
+          const data = await resp.json();
+          setWeather(data)
+        }
+
       } catch (error) {
         console.log(error);
       }

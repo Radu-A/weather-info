@@ -20,14 +20,9 @@
 - React
 - Mui
 
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+You need to install npm. To install the latest version:
 
 - npm
   ```sh
@@ -38,7 +33,7 @@ This is an example of how to list things you need to use the software and how to
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/Radu-A/weather-info
    ```
 2. Install NPM packages
    ```sh
