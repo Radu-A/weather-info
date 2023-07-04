@@ -12,7 +12,7 @@
   </p>
 </div>
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](./src/assets/screenshots/screenshot-weather-info.jpg)
 
 ### Built With
 
